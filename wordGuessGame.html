@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <title>Guessing Game</title>
+
+    <style type="text/css">
+    #stage {
+        width: 300px;
+        height: 33px;
+        position: relative;
+    }
+    #scale {
+        width: 300px;
+        height: 33px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-image: url(scale.png);
+    }
+    #arrow {
+        width: 17px;
+        height: 22px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-image: url(arrow.png);
+        -webkit-transition: left 0.5s ease-out 0s;
+        -moz-transition: left 0.5s ease-out 0s;
+        transition: left 0.5s ease-out 0s;
+    }
+    </style>
+
+    <div id="stage">
+        <div id="scale"></div>
+        <div id="arrow"></div>
+    </div>
+
+    <p id="output">I am thinking of a number between 0 and 9.</p>
+    <input id="input" type="text" placeholder="Enter your guess..." autofocus>
+    <button>Guess</button>
+    
+    <script type="text/javascript">
+        
+        //game variables
+        var mysteryNumber = Math.floor(Math.random() * 9);
+        var playersGuess = 0;
+        var guessesLeft = 10;
+        var guessesMade = 0;
+        var gameState = "";
+        var gameWon = false;
+        
+        //the input and output fields
+        var input = document.querySelector("#input");
+        var output = document.querySelector("#output");
+
+        //the button
+        var button = document.querySelector("button");
+        button.style.cursor = "pointer";
+        button.addEventListener("click", clickHandler, false);
+        
+        window.addEventListener("keydown", keydownHandler, false);
+        
+        var arrow = document.querySelector("#arrow");
+
+        function render() {
+            arrow.style.left = 
+        }
+        function keydownHandler(event) {
+            if(event.keyCode === 13) {
+                validateInput();
+            }
+        }
+
+        function clickHandler() {
+            validateInput();
+        }
+        
+        function playGame() {
+            guessesLeft--;
+            guessesMade++;
+            gameState = " Guesses Made: " + guessesMade + ", Guesses Left: " + guessesLeft;
+
+            playersGuess = parseInt(input.value);
+            if (playersGuess > mysteryNumber) {
+                output.innerHTML = "That's too high.<br>" + gameState;
+                if (guessesLeft < 1) {
+                    endGame();
+                }
+            }
+            else if (playersGuess < mysteryNumber) {
+                output.innerHTML = "That's too low.<br>" + gameState;
+                if (guessesLeft < 1) {
+                    endGame();
+                }
+            }
+            else {
+                gameWon = true;
+                endGame();
+            }
+        }
+        
+        function endGame() {
+            if (gameWon) {
+                output.innerHTML = "Yes, it's " + mysteryNumber + "!" + "<br>" + "It only took you " + guessesMade + "guesses.";
+            }
+            else {
+                output.innerHTML = "No more guesses left !<br>" + "The number was: " + mysteryNumber + ".";
+            }
+        }
+        
+        function validateInput() {
+            playersGuess = parseInt(input.value);
+            if(isNaN(playersGuess)) {
+                output.innerHTML = "Please enter a number.";
+            }
+            else {
+                playGame();
+            }
+        }
+
+
+    </script>
+
+</html>
