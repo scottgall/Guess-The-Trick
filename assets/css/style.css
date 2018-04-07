@@ -1,0 +1,26 @@
+* {
+    font-variant-ligatures: none;
+    font-family: 'Anonymous Pro', monospace;
+}
+img {
+    height: 300px;
+}
+#placeholders {
+    letter-spacing: 5px;
+}
+.row {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.letters {
+    height: 64px;
+}
+.notification {
+    height: 30px;
+    color: red;
+    font-style: italic;
+}
+#guessedLetters {
+    color: #bfbfbf;
+    font-style: italic;
+}

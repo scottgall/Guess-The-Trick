@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Trick</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>guess the trick</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <div id="pic">
+                </div>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col-12 text-center">
+                <button id="newGameButton" class="btn btn-dark">new trick</button>
+            </div>
+        </div>       
+        <div class="row">
+            <div class="col-12 text-center notification">
+                <h6 id="notification">*click to begin*</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>
+                    <span id="placeholders">*</span>
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center letters">
+                <h4>
+                    letters guessed:
+                    <br>
+                    <span id="guessedLetters"></span>
+                </h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 text-center">
+                <h4>
+                guesses left -
+                <span id="guessesLeft">0</span>
+                </h4>
+            </div>
+            <div class="col-12 col-md-4 text-center">
+                 <h4>
+                 wins - 
+                 <span id="wins">0</span>
+                </h4>
+            </div>
+            <div class="col-12 col-md-4 text-center">
+                <h4>
+                losses - 
+                <span id="losses">0</span>
+                </h4>
+            </div>
+        </div>
+    </div>
+  
+<script src="assets/javascript/game.js"></script>
+
+</body>
+
+</html>
