@@ -10,9 +10,8 @@ var $notification = document.getElementById('notification');
 var $pic = document.getElementById('pic');
 
 // game variables
-var wordBank = ['backside disaster', 'backside pivot', 'backside smith', 'boardslide', 'backside lipslide', 'backside noseblunt', 'crooked grind', 'fakie flip', 'fakie hardflip', 'frontside bluntslide', 'frontside pivot', 'frontside wallride', 'hurricane', 'impossible', 'melon grab', 'nosebonk', 'ollie', 'hippy jump', 'powerslide', 'slash grind', 'tre flip', 'wallie', 'wallride'];
-var trickPicBank = ['backsideDisaster.gif', 'backsidePivot.gif', 'backsideSmith.gif', 'boardslide.gif', 'backsideLipslide.gif', 'backsideNoseblunt.gif', 'crookedGrind.gif', 'fakieFlip.gif', 'fakieHardflip.gif', 'frontsideBluntslide.gif', 'frontsidePivot.gif', 'frontsideWallride.gif', 'hurricane.gif', 'impossible.gif', 'melonGrab.gif', 'nosebonk.gif', 'ollie.gif', 'hippyJump.gif', 'powerslide.gif', 'slashGrind.gif', 'treFlip.gif', 'wallie.gif', 'wallride.gif'];
-var placeholderPicBank = ['place1.gif', 'place2.gif', 'place3.gif', 'place4.gif', 'place5.gif', 'place6.gif', 'place7.gif', 'place8.gif', 'place9.gif', 'place10.gif'];
+var wordBank = ['pivot', 'hippy jump', 'boardslide', 'impossible', 'ollie', 'wallie', 'tre flip'];
+var trickPicBank = ['pivot.gif', 'hippyJump.gif', 'boardslide.gif', 'impossible.gif', 'ollie.gif', 'wallie.gif', 'treflip.gif'];
 var pic = '';
 var wins = 0;
 var losses = 0;
@@ -31,11 +30,10 @@ $pic.innerHTML = '<img src="assets/images/trick/push.jpg" <alt="skateboard gif">
 function newGame() {
 
     if (!gameRunning) {
-    placeholderPic = Math.floor((Math.random() * 23) + 1);
-    console.log(placeholderPic)
-    $pic.innerHTML = '<img src="assets/images/placeholder/place' + placeholderPic +'.gif" <alt=skateboard gif">';
-    // pic = placeholderPicBank[Math.floor(Math.random() * placeholderPicBank.length)];
-    // $pic.innerHTML = '<img src="assets/images/placeholder/' + pic + '" <alt="skateboard gif">';
+    // placeholderPic = Math.floor((Math.random() * 23) + 1);
+    // console.log(placeholderPic)
+    // $pic.innerHTML = '<img src="assets/images/placeholder/place' + placeholderPic +'.gif" <alt=skateboard gif">';
+    $pic.innerHTML = '<img src="assets/images/trick/push.jpg" <alt="skateboard gif">';
     // reset all game info
     gameRunning = true;
     guessesLeft = 8;
