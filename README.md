@@ -1,1 +1,2 @@
-# wordGuessGame.github.io
+# wordGuessGame
+hangman-style word guessing game
